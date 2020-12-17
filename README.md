@@ -41,8 +41,10 @@
 | user              | references  | null: false, foreign_key: true  | 投稿ユーザー |            |
 
 ### Association
-- has_many   :fish_kinds
+
 - belongs_to :user
+- has_many_attached :images
+- has_many   :fish_kinds
 
 ### Memo
 
