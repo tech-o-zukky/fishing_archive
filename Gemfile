@@ -57,3 +57,4 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'rails-i18n'  #add
 gem 'devise'      #add
+gem 'active_hash' #add
