@@ -10,7 +10,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_17_032324) do
+ActiveRecord::Schema.define(version: 2020_12_17_093606) do
+
+  create_table "records", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "title", null: false
+    t.date "date", null: false
+    t.integer "prefecture_id", null: false
+    t.string "area"
+    t.string "place"
+    t.boolean "timing1", default: false, null: false
+    t.boolean "timing2", default: false, null: false
+    t.boolean "timing3", default: false, null: false
+    t.boolean "timing4", default: false, null: false
+    t.boolean "timing5", default: false, null: false
+    t.boolean "timing6", default: false, null: false
+    t.boolean "timing7", default: false, null: false
+    t.integer "weather_id"
+    t.integer "wind_id"
+    t.float "temperature"
+    t.float "water_temperature"
+    t.integer "wave_id"
+    t.integer "water_quality_id"
+    t.integer "tide_id"
+    t.text "content", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_records_on_user_id"
+  end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "nickname", null: false
@@ -25,4 +52,5 @@ ActiveRecord::Schema.define(version: 2020_12_17_032324) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "records", "users"
 end
