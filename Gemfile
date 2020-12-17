@@ -58,3 +58,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'rails-i18n'  #add
 gem 'devise'      #add
 gem 'active_hash' #add
+gem 'mini_magick' #add-画像関連
+gem 'image_processing', '~> 1.2'  #add-画像関連
