@@ -1,0 +1,2 @@
+class Waterquality < ApplicationRecord
+end
