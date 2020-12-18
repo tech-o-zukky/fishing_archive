@@ -30,12 +30,11 @@ module FishingArchive
     # the framework and any gems in your application.
 
     # add start 不要ファイル生成しないよう設定
-    config.generators do |g|
-      g.stylesheets false
-      g.javascripts false
-      g.helper false
-      g.test_framework true   # change 20201217 RSpec関連ファイルは生成する false->true
-    end
+    # config.generators do |g|
+    #   g.stylesheets false
+    #   g.javascripts false
+    #   g.helper false
+    # end
     # add end
 
     # add start 日本ローカライズ

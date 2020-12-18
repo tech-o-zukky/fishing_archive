@@ -26,5 +26,21 @@ ja:
         unconfirmed_email: 未確認Eメール
         unlock_token: ロック解除用トークン
         updated_at: 更新日
+      record:
+        title: タイトル
+        date: 釣行日
+        prefecture_id: 都道府県
+        content: 投稿内容
+        images: 画像ファイル
     models:
       user: ユーザー
+  activemodel:
+    attributes:
+      fish_record:
+        title: タイトル
+        date: 釣行日
+        prefecture_id: 都道府県
+        content: 投稿内容
+        images: 画像ファイル
+        fish_name: 魚種名
+        fish_count: 匹数

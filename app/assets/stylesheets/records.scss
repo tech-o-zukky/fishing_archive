@@ -1,0 +1,105 @@
+// Place all the styles related to the records controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.header {
+  width: 100%;
+  height: 80px;
+  padding: 10px 0 0 20px;
+}
+
+h1 a {
+  color: white;
+  font-family: 'Courgette', cursive;
+  text-decoration: none;
+}
+
+h1 a:hover {
+  color: #ffbb00;
+  text-decoration: none;
+}
+
+h2 {
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+h3 {
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+.eyecatch {
+  display: flex;
+  justify-content: center;
+  margin: 30px 0px;
+  width: 100%;
+}
+
+.card {
+  width: 400px;
+  margin: 0 0 30px 0;
+}
+
+.card-title {
+  font-size: medium;
+}
+
+.show-container {
+  margin: 0 50px;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+.fish-show-title {
+  text-align: center;
+  margin: 30px 0;
+}
+
+.show-title {
+  padding: 10px;
+  text-align: center;
+  background-color: #92ffff;
+  border-radius: 5px;
+}
+
+.image-box {
+  width: 90%;
+}
+
+.fish-show-img {
+  width: 400px;
+  padding: 20px 10px;
+}
+
+.fish-show-th {
+  width: 150px;
+}
+
+.new-container {
+  margin: 0 50px;
+  font-family: 'Noto Sans JP', sans-serif;
+  width: 500px;
+}
+
+.indispensable {
+  margin: 0 15px;
+  padding: 0 10px;
+  text-align: center;
+  color: white;
+  font-size: 12px;
+  background-color: red;
+  border-radius: 3px;
+}
+
+.footer {
+  text-align: center;
+  margin: 150px 0 0 0;
+}
+
+//  /* タブレット表示時 */
+//  @media (max-width: 1024px) {
+
+//  }
+
+//  /* スマホ表示時 */
+// @media (max-width: 375px) {
+
+//  }
