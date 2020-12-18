@@ -1,13 +1,4 @@
-<h1 class="bg-primary text-white">Records#index</h1>
-<p class="font-italic">Find me in app/views/records/index.html.erb</p>
-
-      <% if user_signed_in? %>
-        <li><%= link_to current_user.nickname, "#", class: "user-nickname" %></li>
-        <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
-      <% else %>
-        <li><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
-        <li><%= link_to '新規登録', new_user_registration_path, class: "sign-up" %></li>
-      <% end %>
+<%= render "shared/header" %>
 
 <div class="eyecatch">
   <div class="carousel slide" id="c1" data-ride="carousel" data-interval=3500>
@@ -45,3 +36,7 @@
     </a>
   </div>
 </div>
+
+<%= render "shared/postlink" %>
+
+<%= render "shared/footer" %>
