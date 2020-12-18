@@ -2,6 +2,7 @@ class RecordsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
 
   def index
+    @records = Record.all.order("created_at DESC")
   end
 
   def show

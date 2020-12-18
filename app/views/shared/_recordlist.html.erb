@@ -1,0 +1,16 @@
+<%= link_to record_path(recordlist.id) do %>
+<div class="card">
+  <%= image_tag recordlist.images[0], class: "card-img-top" if recordlist.images[0].present? %>
+  <div class="card-body">
+    <h3 class='card-title'>
+      <%= recordlist.title %>
+    </h3>
+    <div class='card-txt'>
+      <%= recordlist.date %>
+    </div>
+    <div class='card-txt'>
+      <%= "投稿者: #{recordlist.user.nickname}" %>
+    </div>
+  </div>
+</div>
+<% end %>
