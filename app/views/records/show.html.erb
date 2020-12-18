@@ -1,0 +1,147 @@
+<%= render "shared/header" %>
+
+<h2 class="fish-show-title">釣果情報</h2>
+
+<div class="show-container">
+  <%# タイトル %>
+  <h3 class="show-title"><%= @record.title %></h3>
+ 
+  <%# 画像 %>
+  <div class="image-box d-flex justify-content-around flex-wrap">
+    <% @record.images.each do |image| %>
+      <div class="fish-show-img">
+        <%= image_tag image, class:'img-fluid' %>
+      </div>
+    <% end %>
+  </div>
+
+  <table class="table table-bordered">
+    <tbody>
+      <%# 投稿者 %>
+      <tr>
+        <th class="table-info fish-show-th">投稿者</th>
+        <td><%= @record.user.nickname %></td>
+      </tr>
+
+      <%# 釣行日 %>
+      <tr>
+        <th class="table-info fish-show-th">釣行日</th>
+        <td><%= @record.date %></td>
+      </tr>
+
+      <%# 都道府県 %>
+      <tr>
+        <th class="table-info">都道府県</th>
+        <td><%= @record.prefecture.name %></td>
+      </tr>
+
+      <%# 場所(ポイント) %>
+      <% if @record.area != "" %>
+      <tr>
+        <th class="table-info">ポイント</th>
+        <td><%= @record.area %></td>
+      </tr>
+      <% end %>
+
+      <%# 場所(施設・船) %>
+      <% if @record.place != "" %>
+      <tr>
+        <th class="table-info">場所</th>
+        <td><%= @record.place %></td>
+      </tr>
+      <% end %>
+
+      <%# 時間帯チェックボックス %>
+      <tr>
+        <th class="table-info">時間帯</th>
+        <td>
+          <% if @record.timing1 %>早朝(4〜7時)<br /><% end %>
+          <% if @record.timing2 %>朝(7〜11時)<br /><% end %>
+          <% if @record.timing3 %>昼(11〜13時)<br /><% end %>
+          <% if @record.timing4 %>午後(13〜16時)<br /><% end %>
+          <% if @record.timing5 %>夕方(16〜19時)<br /><% end %>
+          <% if @record.timing6 %>夕夜(19〜0時)<br /><% end %>
+          <% if @record.timing7 %>深夜(0〜4時)<% end %>
+        </td>
+      </tr>
+
+      <%# 天気 %>
+      <% if @record.weather.id != 0 %>
+      <tr>
+        <th class="table-info">天気</th>
+        <td><%= @record.weather.name %></td>
+      </tr>
+      <% end %>
+
+      <%# 風 %>
+      <% if @record.wind.id != 0 %>
+      <tr>
+        <th class="table-info">風</th>
+        <td><%= @record.wind.name %></td>
+      </tr>
+      <% end %>
+
+      <%# 気温 %>
+      <% if @record.temperature != nil %>
+      <tr>
+        <th class="table-info">気温</th>
+        <td><%= @record.temperature %>度</td>
+      </tr>
+      <% end %>
+
+      <%# 水温 %>
+      <% if @record.water_temperature != nil %>
+      <tr>
+        <th class="table-info">水温</th>
+        <td><%= @record.water_temperature %>度</td>
+      </tr>
+      <% end %>
+      
+      <%# 波高 %>
+      <% if @record.wave.id != 0 %>
+      <tr>
+        <th class="table-info">波の高さ</th>
+        <td><%= @record.wave.name %></td>
+      </tr>
+      <% end %>
+
+      <%# 水質 %>
+      <% if @record.water_quality.id != 0 %>
+      <tr>
+        <th class="table-info">水質</th>
+        <td><%= @record.water_quality.name %></td>
+      </tr>
+      <% end %>
+
+      <%# 潮汐 %>
+      <% if @record.tide.id != 0 %>
+      <tr>
+        <th class="table-info">潮汐</th>
+        <td><%= @record.tide.name %></td>
+      </tr>
+      <% end %>
+
+      <%# 釣れた魚 %>
+      <% @record.fish_kinds.each_with_index do | fish_kind, i | %>
+        <tr>
+          <th class="table-info"><%= "魚種 (匹数)【#{i + 1}】" %></th>
+          <td><%= fish_kind.fish_name %> (<%= fish_kind.fish_count %> 匹)</td>
+        </tr>
+      <% end %>
+
+      <%# 詳細内容 %>
+      <tr>
+        <th class="table-info">投稿内容</th>
+        <td><%= safe_join(@record.content.split("\n"),tag(:br)) %></td>
+      </tr>
+
+    </tbody>
+  </table>
+</div>
+
+<%# 新規投稿への遷移 %>
+<% if user_signed_in? %>
+  <%= render "shared/postlink" %>
+<% end %>
+
+<%= render "shared/footer" %>
