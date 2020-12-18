@@ -1,7 +1,11 @@
 class RecordsController < ApplicationController
-  before_action :authenticate_user!, except: [:index]
+  before_action :authenticate_user!, except: [:index, :show]
 
   def index
+  end
+
+  def show
+    @record = Record.find(params[:id])
   end
 
   def new
