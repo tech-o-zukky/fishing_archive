@@ -1,17 +1,43 @@
-<header class="header bg-primary">
-  <h1>
-    <%= link_to 'Fishing Archive', root_path %>
-  </h1>
+<header>
 
-  <div>
+<div class="header bg-primary">
+  <div class="title">
+    <h1>
+      <%= link_to 'Fishing Archive', root_path %>
+    </h1>
+  </div>
+
+  <div class="user-container">
     <% if user_signed_in? %>
-      <li><%= current_user.nickname %></li>
-      <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
+
+      <%= link_to destroy_user_session_path, method: :delete do %>
+        <div class="user-btn border border-white rounded">
+          ログアウト
+        </div>
+      <% end %>
+
+      <div class="user-name">
+        <%= current_user.nickname %>さん
+      </div>
+
     <% else %>
-      <li><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
-      <li><%= link_to '新規登録', new_user_registration_path, class: "sign-up" %></li>
+
+      <%= link_to new_user_session_path do %>
+        <div class="user-btn border border-white rounded">
+          ログイン
+        </div>
+      <% end %>
+
+      <%= link_to new_user_registration_path do %>
+        <div class="user-btn border border-white rounded">
+          新規登録
+        </div>
+      <% end %>
+
     <% end %>
   </div>
+</div>
+
 </header>
 
 
