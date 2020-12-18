@@ -9,6 +9,16 @@ class RecordsController < ApplicationController
   end
 
   def create
+    @fish_record = FishRecord.new(fish_record_params)
+    if @fish_record.valid?
+      @fish_record.save
+      redirect_to root_path
+    else
+      #戻った時ひとつの欄にまとめて記述されてしまうため、一旦クリアしておく
+      @fish_record.fish_name = ""
+      @fish_record.fish_count = ""
+      render :new
+    end
   end
 
   private
