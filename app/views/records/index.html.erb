@@ -1,7 +1,18 @@
 <%= render "shared/header" %>
 
-<%# アイキャッチ %>
-<%= render partial: "shared/eyecatch" %>
+<div class="container">
+
+  <%# アイキャッチ %>
+  <%= render partial: "shared/eyecatch" %>
+
+  <%# 釣果情報一覧 %>
+  <h2 class="fish-show-title">釣果情報</h2>
+  <div class="d-flex justify-content-around flex-wrap">
+    <% if @records != nil %>
+      <%= render partial: "shared/recordlist", collection: @records %>
+    <% end %>
+  </div>
+</div>
 
 <%# 新規投稿への遷移 %>
 <% if user_signed_in? %>
