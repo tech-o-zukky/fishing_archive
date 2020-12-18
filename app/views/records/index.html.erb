@@ -3,6 +3,9 @@
 <%# アイキャッチ %>
 <%= render partial: "shared/eyecatch" %>
 
-<%= render "shared/postlink" %>
+<%# 新規投稿への遷移 %>
+<% if user_signed_in? %>
+  <%= render "shared/postlink" %>
+<% end %>
 
 <%= render "shared/footer" %>
