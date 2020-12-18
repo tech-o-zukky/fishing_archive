@@ -103,12 +103,12 @@
 
     <%# 釣れた魚 %>
     <div class="form-group">
-      <label>魚種【1】</label>
+      <label>魚種【1】</label><span class="indispensable">必須</span>
       <%= f.text_field :fish_name, name: 'fish_record[fish_name][]', class:"form-control", placeholder: "例)サバ" %>
 
-      <label>匹数【1】</label>
+      <label>匹数【1】</label><span class="indispensable">必須</span>
       <%= f.text_field :fish_count, name: 'fish_record[fish_count][]', class:"form-control",placeholder: "例)15" %>
-      <p class="font-text small">※釣れない場合は「ボウズ、0匹」と記入</p>
+      <p class="font-text small">※釣れない場合は「ボウズ」、「0」匹を記入</p>
     </div>
 
     <div class="form-group">
