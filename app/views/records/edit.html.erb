@@ -151,6 +151,8 @@
 
     <%# 画像 %>
     <div class="form-group">
+      <label>画像</label>
+      <p class="font-text small">※前回画像を保存した場合も、ファイルを添付しなおしてください</p>
       <%= f.file_field :images, name: 'fish_record[images][]', id: 'fish_record_image' %>
       <div id="image-list"></div>
     </div>
