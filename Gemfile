@@ -60,3 +60,4 @@ gem 'devise'      #add
 gem 'active_hash' #add
 gem 'mini_magick' #add-画像関連
 gem 'image_processing', '~> 1.2'  #add-画像関連
+gem "aws-sdk-s3", require: false  #add-AmazonS3対応
