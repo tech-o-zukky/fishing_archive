@@ -1,5 +1,5 @@
 class RecordsController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :show]
+  before_action :authenticate_user!, except: [:index, :show, :edit]
 
   def index
     @records = Record.all.order("created_at DESC")
@@ -29,6 +29,7 @@ class RecordsController < ApplicationController
   def edit
     @fish_record = FishRecord.new
     select_fish_record(@fish_record, params[:id])
+    redirect_to action: :index unless user_signed_in? && current_user.id == @fish_record.user_id
   end
 
   def update
@@ -78,6 +79,7 @@ class RecordsController < ApplicationController
     fishrecord.water_quality_id = getdata.water_quality_id
     fishrecord.tide_id = getdata.tide_id
     fishrecord.content = getdata.content
+    fishrecord.user_id = getdata.user.id
     fishrecord.fish_name = []
     fishrecord.fish_count = []
 
