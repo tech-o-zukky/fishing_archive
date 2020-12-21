@@ -33,14 +33,15 @@ class RecordsController < ApplicationController
   end
 
   def update
-    @fish_record = FishRecord.new
-    if @fish_record.update(fish_record_params, params[:id])
+    @fish_record = FishRecord.new(fish_record_params)
+    if @fish_record.valid?
+      @fish_record.update(fish_record_params, params[:id])
       redirect_to root_path
     else
       #戻った時ひとつの欄にまとめて記述されてしまうため、一旦クリアしておく
       @fish_record.fish_name = ""
       @fish_record.fish_count = ""
-      render :new
+      render :edit
     end
   end
 
