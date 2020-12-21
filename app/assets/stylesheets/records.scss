@@ -1,5 +1,6 @@
 .header {
   width: 100%;
+  display: flex;
   margin: 0 0 30px 0;
 }
 
@@ -22,17 +23,13 @@ h3 {
   font-family: 'Noto Sans JP', sans-serif;
 }
 
-.title-container {
-  display: flex;
+.eyecatch {
+  margin: 0 auto;
+  width: 1000px;
 }
 
 .title {
   margin: 10px 0 0 20px;
-}
-
-.eyecatch {
-  margin: 0 auto;
-  width: 1000px;
 }
 
 .user-container {
