@@ -40,7 +40,7 @@ class RecordsController < ApplicationController
       #戻った時ひとつの欄にまとめて記述されてしまうため、一旦クリアしておく
       @fish_record.fish_name = ""
       @fish_record.fish_count = ""
-      render :new
+      render :edit
     end
   end
 
