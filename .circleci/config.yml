@@ -42,7 +42,7 @@ jobs:
            name: run rubocop
            command: bundle exec rubocop --auto-gen-config
 
-      # run tests!
+      # run tests
       - run:
           name: run tests
           command: |
