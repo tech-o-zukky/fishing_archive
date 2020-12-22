@@ -1,5 +1,5 @@
 require 'rails_helper'
 
-RSpec.describe Waterquality, type: :model do
+RSpec.describe WaterQuality, type: :model do
 
 end
