@@ -15,7 +15,7 @@ RSpec.describe FishRecord, type: :model do
     it 'titleが空では登録できない' do
       @fish_record.title = nil
       @fish_record.valid?
-      expect(@fish_record.errors.full_messages).to include("errorタイトルを入力してください")
+      expect(@fish_record.errors.full_messages).to include("タイトルを入力してください")
     end
     it 'dateが空では登録できない' do
       @fish_record.date = nil
