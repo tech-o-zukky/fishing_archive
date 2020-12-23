@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: fishing_archive_production
-  username: fishing_archive
+  username: root
   password: <%= ENV['FISHING_ARCHIVE_DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
