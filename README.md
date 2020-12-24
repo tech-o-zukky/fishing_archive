@@ -111,4 +111,5 @@
 - Bootstrap 4.5.3 (jQuery 3.5.1, popper.js 1.16.1) 
 
 git clone https://github.com/tech-o-zukky/fishing_archive.git
-[Bootstrap4導入方法](https://qiita.com/tech_o_z/items/12a2a7a8debb6b83a5d3)
+<br>
+[※Bootstrap4導入方法](https://qiita.com/tech_o_z/items/12a2a7a8debb6b83a5d3)
