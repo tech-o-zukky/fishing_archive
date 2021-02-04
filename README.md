@@ -103,13 +103,9 @@
 
 - belongs_to :record
 
-## ローカル環境
+## 開発環境
 
 - Ruby 2.6.5
 - Ruby on Rails 6.0.3
 - MySQL 5.6
 - Bootstrap 4.5.3 (jQuery 3.5.1, popper.js 1.16.1) 
-
-git clone https://github.com/tech-o-zukky/fishing_archive.git
-<br>
-[※Bootstrap4導入方法](https://qiita.com/tech_o_z/items/12a2a7a8debb6b83a5d3)
