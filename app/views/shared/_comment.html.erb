@@ -1,5 +1,25 @@
 <div>
   <h3>コメント</h3>
+  <% if @comments != nil %>
+    <% @comments.each do |comment| %>
+      <p><%= comment.comment_text %></p>
+    <% end %>
+  <% else %>
+    <p>まだコメントはありません。</p>
+  <% end %>
+
+  <%# ログイン済みならコメント投稿フォームを表示 %>
+  <% if user_signed_in? %>
+    <%= form_with model: @comment do |f| %>
+
+      <%= render partial: "shared/error_messages", locals: { model: f.object } %>
+
+      <%= f.text_field :comment_text, class:"form-control", placeholder:"（ここにコメントを記入してください）" %>
+      <%= f.submit "コメントを投稿する", class:"btn btn-info mt-5" %>
+
+      <% end %>
+  <% end %>
+
 
 
 <div>
