@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   # アソシエーション
   has_many :records
+  has_many :comments  # add 20210206 コメント機能
 
   # バリデーション
   validates :nickname, presence: true, length: { maximum: 40 }
