@@ -11,5 +11,11 @@ consumer.subscriptions.create("CommentChannel", {
 
   received(data) {
     // Called when there's incoming data on the websocket for this channel
+    const html = `<p>${data.content.comment_text} ${data.user.nickname} ${data.date}</p>`;
+    const comments = document.getElementById('comments');
+    const newComment = document.getElementById('comment_comment_text');
+
+    comments.insertAdjacentHTML('beforeend', html);
+    newComment.value='';
   }
 });
