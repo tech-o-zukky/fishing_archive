@@ -1,9 +1,9 @@
 <div>
-  <h3>コメント</h3>
+  <h3 class="fish-show-title">コメント</h3>
   <div id="comments">
     <% if @comments.length != 0 %>
       <% @comments.each do |comment| %>
-        <p><%= comment.comment_text %> <%= comment.user.nickname %> <%= l(comment.created_at, format: :long) %></p>
+        <p><%= comment.comment_text %> 【<%= comment.user.nickname %>】<%= l(comment.created_at, format: :long) %></p>
       <% end %>
     <% else %>
       <p>まだコメントはありません。</p>
