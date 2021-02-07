@@ -44,3 +44,7 @@ ja:
         images: 画像ファイル
         fish_name: 魚種名
         fish_count: 匹数
+  date:
+    formats:
+      default: ! '%Y/%m/%d'
+      long: ! '%Y/%m/%d %H:%M'
