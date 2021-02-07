@@ -9,9 +9,9 @@ class RecordsController < ApplicationController
     @record = Record.find(params[:id])
 
     # add 20210206 コメント機能 ログイン済みの時はコメント入力欄表示
-    @comments = Comment.all
+    @comments = @record.comments
 
-    if user.user_signed_in?
+    if user_signed_in?
       @comment = Comment.new
     end
   end
