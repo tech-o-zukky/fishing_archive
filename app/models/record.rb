@@ -12,6 +12,7 @@ class Record < ApplicationRecord
     belongs_to :user
     has_many_attached :images
     has_many :fish_kinds
+    has_many :comments  # add 20210206 コメント機能
   
     # バリデーション
     validates :title,            presence: true

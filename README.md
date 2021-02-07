@@ -37,8 +37,8 @@
 
 | 機能一覧        | 内容         |
 | -------------- | ----------- |
-| 検索機能        | 釣果を知りたい魚の名前を入力し、該当する過去の釣果情報を検索できるようにする |
 | コメント機能    | 該当の釣果情報にコメント投稿することで、利用者同士でコミュニケーションをとれるようにする |
+| 検索機能        | 釣果を知りたい魚の名前を入力し、該当する過去の釣果情報を検索できるようにする |
 | 投稿削除機能    | 投稿された記事を削除する |
 
 ## データベース設計
@@ -54,6 +54,7 @@
 #### Association
 
 - has_many :records
+- has_many :comments
 
 ### recordsテーブル（投稿管理テーブル）
 
@@ -86,6 +87,7 @@
 - belongs_to :user
 - has_many_attached :images
 - has_many   :fish_kinds
+- has_many   :comments
 
 #### Memo
 
@@ -102,6 +104,19 @@
 #### Association
 
 - belongs_to :record
+
+### commentsテーブル(コメント管理テーブル)
+
+| Column       | Type        | Options                         | 論理名            | Memo       |
+| ------------ | ----------- | ------------------------------- | ---------------- | ---------- |
+| record       | references  | null: false, foreign_key: true  | 投稿ID            |            |
+| user         | references  | null: false, foreign_key: true  | コメント投稿ユーザー |           |
+| comment     | text         | null: false                     | コメント          |            |
+
+#### Association
+
+- belongs_to :record
+- belongs_to :user
 
 ## 開発環境
 
